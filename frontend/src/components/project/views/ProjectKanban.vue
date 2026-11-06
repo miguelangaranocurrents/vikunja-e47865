@@ -355,7 +355,7 @@ const DRAG_OPTIONS = {
 	delayOnTouchOnly: true,
 	delay: 1000,
 	// sortable only auto-scrolls within this many px of the board edge; the default (30) is too narrow to reach buckets off screen
-	scrollSensitivity: 80,
+	scrollSensitivity: 200,
 } as const
 
 const MIN_SCROLL_HEIGHT_PERCENT = 0.25
