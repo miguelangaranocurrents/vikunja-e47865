@@ -595,4 +595,11 @@ describe('hasFilterQuery', () => {
 		expect(hasFilterQuery('done = false')).toBe(true)
 		expect(hasFilterQuery('hello')).toBe(false)
 	})
+
+	it('does not treat plain words that contain an operator as a filter', () => {
+		// "in" is a word operator, it must not match inside "meeting"
+		expect(hasFilterQuery('meeting')).toBe(false)
+		expect(hasFilterQuery('likely')).toBe(false)
+		expect(hasFilterQuery('labels in 1, 2')).toBe(true)
+	})
 })
